@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/',include('account.urls', namespace="account")),
     url(r'^myaccount/',include('myaccount.urls', namespace="myaccount")),
+    url(r'^messages/', include('postman.urls')),
 ]

@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'pagination',
     'account',
     'myaccount',
+    'postman',
 )
 
 MIDDLEWARE_CLASSES = (
