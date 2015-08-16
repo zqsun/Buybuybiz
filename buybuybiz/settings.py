@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'widget_tweaks',
     'pagination',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
