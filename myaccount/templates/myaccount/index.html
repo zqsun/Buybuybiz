@@ -17,7 +17,7 @@
 		                <i class="fa fa-comments fa-5x"></i>
 		            </div>
 		        	<div class="col-xs-9 text-right">
-		            	<div class="huge">{% if postman_unread %}{{postman_unread}}{% else %} 0 {% endif %}</div>
+		            	<div class="huge">{% postman_unread as unread_count %}{% if unread_count %}{{unread_count}}{% else %} 0 {% endif %}</div>
 		            	<div>New Messages!</div>
 		        	</div>
 		        </div>
