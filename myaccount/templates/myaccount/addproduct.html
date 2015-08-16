@@ -1,0 +1,63 @@
+{% extends "myaccount/myaccount_base.html" %}
+{% load widget_tweaks %}
+
+{% block page-header %}
+{% if tflag != "edit" %}
+Add Product
+{% else %}
+Edit Product
+{% endif %}
+{% endblock %}
+
+{% block page-wrapper %}
+<div class="row">
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!-- <div class="col-lg-6"> -->
+					{% if tflag != "edit" %}
+					<form role="form" method="post" action="{% url 'myaccount:addproduct' %}" enctype="multipart/form-data">
+					{% else %}
+					<form role="form" method="post" action="{% url 'myaccount:editProduct' product_id %}" enctype="multipart/form-data">
+					{% endif %}
+						<div class="form-group">{% csrf_token %}</div>
+						<div class="form-group">
+							<label>Product Name</label>
+							{% render_field product_form.name class="form-control" autofocus="" %}
+						</div>
+						<div class="form-group">
+							<label>Product Description</label>
+							{% render_field product_form.description class="form-control" %}
+						</div>
+						<div class="form-group">
+							<label>Product Price</label>
+							{% render_field product_form.price class="form-control" %}
+						</div>
+						<div class="form-group">
+							<label>Product Quantity</label>
+							{% render_field product_form.quantity class="form-control" %}
+						</div>
+						<div class="form-group">
+							<label>Product Category</label>
+							{% render_field product_form.category class="form-control" %}
+						</div>
+						<div class="form-group">
+							<label>Product Picture</label>
+							{% render_field pic_form.picture class="form-control" %}
+						</div>
+						<input type="submit" class="btn btn-lg btn-success btn-block" value="Submit" />
+                        <!-- <input type="hidden" name="next" value="{{ next }}" /> -->
+					</form>
+				<!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <p>{{ request.user.get_profile.whatever }}</p> -->
+<!-- <form action="{% url 'myaccount:addproduct' %}" method="post">
+    {% csrf_token %}
+    {{ product_form }}
+    <input type="submit" value="Submit" />
+</form> -->
+{% endblock %}
