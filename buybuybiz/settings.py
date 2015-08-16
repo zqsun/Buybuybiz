@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'widget_tweaks',
     'pagination',
     'account',
+    'myaccount',
 )
 
 MIDDLEWARE_CLASSES = (
