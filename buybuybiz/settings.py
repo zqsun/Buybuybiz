@@ -122,3 +122,6 @@ LOGIN_REDIRECT_URL = '/myaccount/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
+
+POSTMAN_DISABLE_USER_EMAILING = True
+POSTMAN_AUTO_MODERATE_AS = True
